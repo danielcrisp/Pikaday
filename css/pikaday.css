@@ -148,6 +148,10 @@
     background: #33aaff;
     box-shadow: inset 0 1px 3px #178fe5;
     border-radius: 3px; }
+  .is-overrun .pika-button, .is-overrun
+  .pika-button-month {
+    background: #fff;
+    color: #999; }
   .is-disabled .pika-button, .is-disabled
   .pika-button-month {
     pointer-events: none;

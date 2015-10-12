@@ -95,6 +95,7 @@ Pikaday has many useful options:
 * `yearSuffix` additional text to append to the year in the title
 * `showMonthAfterYear` render the month after year in the title (default `false`)
 * `showMonthInTitle` render the month in the title (default `true`). If `false` the months are listed below the title.
+* `showOverrunDays` shows days from preceding / following month instead of empty cells (default `false`)
 * `numberOfMonths` number of visible calendars
 * `mainCalendar` when `numberOfMonths` is used, this will help you to choose where the main calendar will be (default `left`, can be set to `right`). Only used for the first display or when a selected date is not already visible
 * `theme` define a classname that can be used as a hook for styling different themes, see [theme example][] (default `null`)

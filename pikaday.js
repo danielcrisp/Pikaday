@@ -233,6 +233,9 @@
         // Render the month in the calendar title
         showMonthInTitle: true,
 
+        // Show days from the preceding / following months, instead of empty cells
+        showOverrunDays: false,
+
         // how many months are visible
         numberOfMonths: 1,
 
@@ -276,12 +279,16 @@
         return abbr ? opts.i18n.weekdaysShort[day] : opts.i18n.weekdays[day];
     },
 
-    renderDay = function(opts)
+    renderDay = function(opts, settings)
     {
-        if (opts.isEmpty) {
-            return '<td class="is-empty"></td>';
-        }
         var arr = [];
+        if (opts.isEmpty) {
+            if (settings.showOverrunDays) {
+                arr.push('is-overrun');
+            } else {
+                return '<td class="is-empty"></td>';
+            }
+        }
         if (opts.isDisabled) {
             arr.push('is-disabled');
         }
@@ -1049,9 +1056,9 @@
                                  (opts.disableWeekends && isWeekend(day)) ||
                                  (opts.disableDayFn && opts.disableDayFn(day)),
                     dayConfig = {
-                        day: 1 + (i - before),
-                        month: month,
-                        year: year,
+                        day: day.getDate(),
+                        month: day.getMonth(),
+                        year: day.getFullYear(),
                         isSelected: isSelected,
                         isToday: isToday,
                         isDisabled: isDisabled,
@@ -1061,7 +1068,7 @@
                         isInRange: isInRange
                     };
 
-                row.push(renderDay(dayConfig));
+                row.push(renderDay(dayConfig, opts));
 
                 if (++r === 7) {
                     if (opts.showWeekNumber) {

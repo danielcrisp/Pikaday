@@ -180,6 +180,11 @@
         border-radius: 3px;
     }
 
+    .is-overrun & {
+        background: #fff;
+        color: #999;
+    }
+
     .is-disabled & {
         pointer-events: none;
         cursor: default;
