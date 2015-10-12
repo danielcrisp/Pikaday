@@ -366,7 +366,7 @@
                         opts.i18n.monthsShort[i] + '</button>');
                 }
 
-                monthHtml = '<div class="pika-label">' + arr.join('') + '</div>';
+                monthHtml = arr.join('');
 
         } else {
 
