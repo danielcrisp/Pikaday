@@ -94,6 +94,7 @@ Pikaday has many useful options:
 * `i18n` language defaults for month and weekday names (see internationalization below)
 * `yearSuffix` additional text to append to the year in the title
 * `showMonthAfterYear` render the month after year in the title (default `false`)
+* `showMonthInTitle` render the month in the title (default `true`). If `false` the months are listed below the title.
 * `numberOfMonths` number of visible calendars
 * `mainCalendar` when `numberOfMonths` is used, this will help you to choose where the main calendar will be (default `left`, can be set to `right`). Only used for the first display or when a selected date is not already visible
 * `theme` define a classname that can be used as a hook for styling different themes, see [theme example][] (default `null`)
@@ -209,6 +210,11 @@ Go to the next or previous month (this will change year if necessary).
 
 `picker.gotoYear()`
 
+Change the current view by year.
+
+`picker.nextYear()`
+`picker.prevYear()`
+
 Change the year being viewed.
 
 `picker.setMinDate()`
@@ -258,6 +264,7 @@ i18n: {
     previousMonth : 'Previous Month',
     nextMonth     : 'Next Month',
     months        : ['January','February','March','April','May','June','July','August','September','October','November','December'],
+    monthsShort   : ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'],
     weekdays      : ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'],
     weekdaysShort : ['Sun','Mon','Tue','Wed','Thu','Fri','Sat']
 }
@@ -289,6 +296,14 @@ Also [@stas][stas] has a fork [stas/Pikaday][stas Pika], but is now quite old
 [![browser compatibility](https://ci.testling.com/rikkert/pikaday.png)
 ](https://ci.testling.com/rikkert/pikaday)
 
+## Sass
+
+When developing install Sass and watch changes like this:
+
+```
+$ gem install sass
+$ sass --watch scss/pikaday.scss:css/pikaday.css
+```
 
 * * *
 
