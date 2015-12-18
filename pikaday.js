@@ -362,7 +362,8 @@
                 for (arr = [], i = 0; i < 12; i++) {
                     arr.push('<button class="pika-button-month' + (i === month ? ' is-selected': '') + '" type="button" data-pika-month="'
                         + (year === refYear ? i - c : 12 + i - c) + '"'
-                        + ((isMinYear && i < opts.minMonth) || (isMaxYear && i > opts.maxMonth) ? ' disabled' : '') + '>' +
+                        //+ ((isMinYear && i < opts.minMonth) || (isMaxYear && i > opts.maxMonth) ? ' disabled' : '') + '>' +
+                        + '>' +
                         opts.i18n.monthsShort[i] + '</button>');
                 }
 
